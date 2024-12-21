@@ -1,13 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Form nhập thông tin sinh viên -->
+    <EditText
+        android:id="@+id/et_student_name"
+        android:background="@drawable/back"
+        android:padding="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Students Fragment"
-        android:textSize="24sp" />
+        android:hint="Tên sinh viên"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/et_student_id"
+        android:background="@drawable/back"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mã sinh viên"
+        android:layout_marginBottom="10dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/et_course"
+        android:background="@drawable/back"
+        android:padding="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lớp học phần"
+        android:inputType="text" />
+
+    <!-- Các nút chức năng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Thêm" />
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sửa" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Xóa" />
+    </LinearLayout>
+    <!-- Danh sách sinh viên -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_students"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
 </LinearLayout>
