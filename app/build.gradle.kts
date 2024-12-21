@@ -45,4 +45,6 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-database:20.0.6'")
     implementation ("com.google.firebase:firebase-core:21.1.1")
+    implementation ("com.google.firebase:firebase-database:20.0.6")
+    implementation ("com.google.firebase:firebase-core:21.1.1")
 }
