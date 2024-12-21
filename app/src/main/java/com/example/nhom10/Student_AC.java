@@ -47,6 +47,14 @@ public class Student_AC extends AppCompatActivity {
         findViewById(R.id.btn_delete).setOnClickListener(view -> deleteStudent());
 
         fetchStudents();
+
+        // Lắng nghe sự kiện click vào item
+        adapter.setOnItemClickListener(student -> {
+            // Đưa dữ liệu lên các EditText
+            etId.setText(student.getId());
+            etName.setText(student.getName());
+            etClass.setText(student.getStudentClass());
+        });
     }
 
     private void addStudent() {

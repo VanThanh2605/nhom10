@@ -11,29 +11,41 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
+
     private List<Student_MD> studentList;
+    private OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(Student_MD student);
+    }
 
     public StudentAdapter(List<Student_MD> studentList) {
         this.studentList = studentList;
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
     @NonNull
     @Override
     public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflate layout từ student_item.xml thay vì simple_list_item_2
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.student_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.student_item, parent, false);
         return new StudentViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         Student_MD student = studentList.get(position);
-        if (student != null) {
-            holder.tvName.setText(student.getName());
-            holder.tvId.setText(student.getId());
-            holder.tvClass.setText(student.getStudentClass());
-        }
+        holder.tvName.setText(student.getName());
+        holder.tvId.setText(student.getId());
+        holder.tvClass.setText(student.getStudentClass());
+
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onItemClick(student);
+            }
+        });
     }
 
     @Override
