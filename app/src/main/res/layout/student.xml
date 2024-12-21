@@ -9,6 +9,9 @@
     <!-- Form nhập thông tin sinh viên -->
     <EditText
         android:id="@+id/et_student_name"
+        android:background="@drawable/back"
+        android:padding="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tên sinh viên"
@@ -16,13 +19,19 @@
 
     <EditText
         android:id="@+id/et_student_id"
+        android:background="@drawable/back"
+        android:padding="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mã sinh viên"
+        android:layout_marginBottom="10dp"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/et_course"
+        android:background="@drawable/back"
+        android:padding="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Lớp học phần"
